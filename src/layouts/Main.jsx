@@ -4,6 +4,7 @@ import Header from '../pages/shared/Header/Header';
 import TitleBar from '../pages/shared/TitleBar/TitleBar';
 import Banner from '../pages/shared/Banner/Banner';
 import TrendyFood from '../pages/shared/TrendyFood/TrendyFood';
+import KidFriendlyRecipe from '../pages/shared/KidFriendlyRecipe/KidFriendlyRecipe';
 
 const Main = () => {
     return (
@@ -12,6 +13,7 @@ const Main = () => {
             <Header></Header>
             <Banner></Banner>
             <TrendyFood></TrendyFood>
+            <KidFriendlyRecipe></KidFriendlyRecipe>
             <Footer></Footer>
         </div>
     );
