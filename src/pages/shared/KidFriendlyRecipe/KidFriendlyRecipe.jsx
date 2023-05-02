@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 const KidFriendlyRecipe = () => {
     return (
-        <>
+        <div className='my-5'>
             <h1 className='text-center my-5'>Kid-Friendly-Recipes</h1>
             <Carousel className='container'>
                 <Carousel.Item interval={1000}>
@@ -41,7 +41,7 @@ const KidFriendlyRecipe = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </>
+        </div>
     );
 };
 

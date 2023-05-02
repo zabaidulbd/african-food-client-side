@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='my-5'>
+        <>
             <Card bg="dark" variant="dark">
                 <div className='d-flex justify-content-evenly'>
                     <div>
@@ -24,7 +24,7 @@ const Footer = () => {
 
 
             </Card>
-        </div>
+        </>
     );
 };
 
