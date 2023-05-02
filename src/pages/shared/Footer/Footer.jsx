@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import { FaFacebook, FaTwitter, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     return (
@@ -19,6 +20,7 @@ const Footer = () => {
                     </div>
                     <div className='mt-5 text-primary'>
                         <h4>Connect</h4>
+                        <p> <span><FaFacebook /></span> <span className='mx-2'><FaTwitter></FaTwitter></span> <span><FaLinkedinIn></FaLinkedinIn></span> <span><FaYoutube className='ms-2'></FaYoutube></span> </p>
                     </div>
                 </div>
 
