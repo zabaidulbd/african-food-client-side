@@ -15,12 +15,12 @@ const SingleChef = () => {
 
 
     return (
-        <div>
-            <h1>single chef</h1>
-            {
-                ChefDetails.map(single => <SingleChefDetails key={single.id} single={single}></SingleChefDetails>)
-            }
-
+        <div className='container my-5'>
+            <div className='row row-cols-1 row-cols-md-3 g-4'>
+                {
+                    ChefDetails.map(single => <SingleChefDetails key={single.id} single={single}></SingleChefDetails>)
+                }
+            </div>
         </div>
     );
 };
