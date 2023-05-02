@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className=" container card mb-3">
+        <div className=" container card my-5">
             <div className="row g-0">
                 <div className="col-md-8">
                     <img src="https://img.freepik.com/free-photo/traditional-tajine-dishes-couscous-fresh-salad-rustic-wooden-table-tagine-lamb-meat-pumpkin-top-view-flat-lay_2829-6116.jpg?w=1060&t=st=1682997741~exp=1682998341~hmac=fd8ff0d852bcfb57bfcacbe42707ef001fa2e3268d42af08ba2c36f06d8ee622" className='img-fluid rounded-start' alt="" />
