@@ -6,7 +6,13 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error))
+    }
 
 
     return (
@@ -24,16 +30,12 @@ const Header = () => {
                             user && <Nav.Link href="#deets">
                                 {<FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>}</Nav.Link>
                         }
+                        {
+                            user ?
+                                <Button onClick={handleLogOut} variant="secondary">Log-Out</Button> :
+                                <Link to={'/login'}><Button variant="secondary">Login</Button></Link>
 
-                        <Nav.Link eventKey={2} href="#memes">
-                            {
-                                user ?
-                                    <Button variant="secondary">Log-Out</Button> :
-                                    <Link to={'/login'}><Button variant="secondary">Login</Button></Link>
-
-                            }
-
-                        </Nav.Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
