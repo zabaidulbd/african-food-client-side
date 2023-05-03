@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const SingleChefDetails = ({ single }) => {
 
-    const { image, name, experience, number, likes, } = single;
+    const { id, image, name, experience, number, likes, } = single;
 
 
     return (
@@ -16,7 +17,7 @@ const SingleChefDetails = ({ single }) => {
                         <h6>Number of Recipe: {number}</h6>
                     </div>
                 </div>
-                <button className='btn btn-primary'>View Details</button>
+                <Link to={`/chef/${id}`}><button className='btn btn-primary'>View Recipes</button></Link>
             </div>
         </div>
     );
