@@ -4,11 +4,16 @@ import Footer from '../Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
+import { useLocation } from 'react-router';
 
 const LogIn = () => {
 
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location);
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -22,7 +27,7 @@ const LogIn = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log(error)
