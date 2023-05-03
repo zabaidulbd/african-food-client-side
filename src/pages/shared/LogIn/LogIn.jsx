@@ -5,7 +5,7 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from '../../../providers/AuthProvider';
 import { useLocation } from 'react-router';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, confirmPasswordReset, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase/firebase.config';
 
 const LogIn = () => {
@@ -15,7 +15,8 @@ const LogIn = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
 
     const handleLogin = event => {
@@ -35,14 +36,26 @@ const LogIn = () => {
     }
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, googleProvider)
             .then(result => {
-                const user = result.user;
-                console.log(user)
+                const loggedInUser = result.user;
+                console.log(loggedInUser)
                 navigate(from, { replace: true });
             })
             .catch(error => {
                 console.log('error', error.message)
+            })
+    }
+
+    const handleGitHubSignIn = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const loggedUpUser = result.user;
+                console.log(loggedUpUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error)
             })
     }
 
@@ -61,7 +74,7 @@ const LogIn = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name='password' placeholder="Password" required />
                     </Form.Group>
-                    <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info">Google Login</Button></span> <span><Button variant="info">GitHub Login</Button></span></div>
+                    <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info">Google Login</Button></span> <span><Button onClick={handleGitHubSignIn} variant="info">GitHub Login</Button></span></div>
                     <Button variant="primary" type="submit">Login</Button>
                     <p>Do not have an account <Link to={'/register'}>Register</Link></p>
                 </Form>
