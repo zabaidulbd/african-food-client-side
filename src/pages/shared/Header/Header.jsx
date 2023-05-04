@@ -3,6 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -19,8 +20,8 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <span className='me-2'><ActiveLink to={'/'}>Home</ActiveLink></span>
+                        <span><ActiveLink to={'/blog'}>Blog</ActiveLink></span>
                     </Nav>
                     <Nav>
                         {
