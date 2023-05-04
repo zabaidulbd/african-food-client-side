@@ -5,7 +5,7 @@ import SingleChefDetails from '../SingleChefDetails/SingleChefDetails';
 const SingleChef = () => {
     const [ChefDetails, setChefDetails] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/chef')
+        fetch('https://assignment-ten-server-side-zabaidulbd.vercel.app/chef')
             .then(res => res.json())
             .then(data => setChefDetails(data))
             .catch(error => console.log(error))
