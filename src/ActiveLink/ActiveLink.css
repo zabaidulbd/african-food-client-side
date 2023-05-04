@@ -1,3 +1,6 @@
 .active {
-    background-color: pink;
+    background-color: rgb(202, 198, 199);
+    padding: 1px;
+    border-radius: 2px;
+    text-decoration: none;
 }

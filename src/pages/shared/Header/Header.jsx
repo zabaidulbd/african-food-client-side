@@ -31,7 +31,7 @@ const Header = () => {
                         {
                             user ?
                                 <Button onClick={handleLogOut} variant="secondary">Log-Out</Button> :
-                                <Link to={'/login'}><Button variant="secondary">Login</Button></Link>
+                                <ActiveLink to={'/login'}>Login</ActiveLink>
                         }
                     </Nav>
                 </Navbar.Collapse>
