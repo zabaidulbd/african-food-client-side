@@ -7,6 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 import { useLocation } from 'react-router';
 import { GithubAuthProvider, GoogleAuthProvider, confirmPasswordReset, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase/firebase.config';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const LogIn = () => {
     const [signInError, setSignInError] = useState();
@@ -74,7 +75,7 @@ const LogIn = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" name='password' placeholder="Password" required />
                     </Form.Group>
-                    <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info">Google Login</Button></span> <span><Button onClick={handleGitHubSignIn} variant="info">GitHub Login</Button></span></div>
+                    <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info"><FaGoogle></FaGoogle> Login with Google </Button></span> <span><Button onClick={handleGitHubSignIn} variant="info"><FaGithub></FaGithub>Login with GitHub</Button></span></div>
                     <Button variant="primary" type="submit">Login</Button>
                     <p>Do not have an account <Link to={'/register'}>Register</Link></p>
                 </Form>

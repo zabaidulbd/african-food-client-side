@@ -12,7 +12,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='container my-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='container my-5 p-4' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="#home">Radhuni-African Food Blogs and Recipe Website</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
