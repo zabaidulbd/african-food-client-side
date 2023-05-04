@@ -5,15 +5,12 @@ import { FaUserCircle } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 const Header = () => {
-
     const { user, logOut } = useContext(AuthContext);
-
     const handleLogOut = () => {
         logOut()
             .then()
             .catch(error => console.log(error))
     }
-
 
     return (
         <Navbar className='container my-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -34,7 +31,6 @@ const Header = () => {
                             user ?
                                 <Button onClick={handleLogOut} variant="secondary">Log-Out</Button> :
                                 <Link to={'/login'}><Button variant="secondary">Login</Button></Link>
-
                         }
                     </Nav>
                 </Navbar.Collapse>

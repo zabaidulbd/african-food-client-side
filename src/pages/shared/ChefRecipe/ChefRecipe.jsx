@@ -6,15 +6,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ChefRecipe = () => {
-
     const [uniqueRecipe, setUniqueRecipe] = useState({});
     const [isDisabled1, setIsDisabled1] = useState(false);
     const [isDisabled2, setIsDisabled2] = useState(false);
     const [isDisabled3, setIsDisabled3] = useState(false);
-
     const chefId = useParams();
     const singleChefId = chefId.id;
-
     const singleChefRecipe = useLoaderData();
 
     useEffect(() => {
@@ -39,7 +36,6 @@ const ChefRecipe = () => {
         setIsDisabled3(true);
         toast("add your recipe in favorite!");
     }
-
 
     return (
         <>

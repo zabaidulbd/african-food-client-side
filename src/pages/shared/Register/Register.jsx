@@ -7,9 +7,7 @@ import { useLocation } from 'react-router';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
-
     const [registerError, setRegisterError] = useState('');
-
     const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();

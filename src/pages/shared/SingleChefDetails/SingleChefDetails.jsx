@@ -2,9 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const SingleChefDetails = ({ single }) => {
-
     const { id, image, name, experience, number, likes, } = single;
-
 
     return (
         <div className="col">

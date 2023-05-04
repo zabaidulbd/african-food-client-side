@@ -9,9 +9,7 @@ import { GithubAuthProvider, GoogleAuthProvider, confirmPasswordReset, getAuth, 
 import app from '../../../firebase/firebase.config';
 
 const LogIn = () => {
-
     const [signInError, setSignInError] = useState();
-
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -19,7 +17,6 @@ const LogIn = () => {
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
-
 
     const handleLogin = event => {
         event.preventDefault();
