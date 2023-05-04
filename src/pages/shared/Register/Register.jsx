@@ -1,13 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../Header/Header';
 import { Button, Container, Form } from 'react-bootstrap';
 import Footer from '../Footer/Footer';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
 
+    const [registerError, setRegisterError] = useState('');
+
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleRegister = event => {
         event.preventDefault();
@@ -16,15 +22,16 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photo, email, password);
 
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log(createdUser)
+                navigate(from, { replace: true });
+                setRegisterError('');
+                form.reset();
             })
             .catch(error => {
-                console.log(error)
+                setRegisterError(error.message);
             })
     }
     return (
@@ -53,6 +60,7 @@ const Register = () => {
                     <Button variant="primary" type="submit">Register</Button>
                     <p>Have an account <Link to={'/login'}>Login</Link></p>
                 </Form>
+                <p className='text-danger'>{registerError}</p>
                 <Footer></Footer>
             </Container>
         </>

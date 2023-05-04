@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
@@ -9,6 +9,8 @@ import { GithubAuthProvider, GoogleAuthProvider, confirmPasswordReset, getAuth, 
 import app from '../../../firebase/firebase.config';
 
 const LogIn = () => {
+
+    const [signInError, setSignInError] = useState();
 
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -27,11 +29,12 @@ const LogIn = () => {
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
                 navigate(from, { replace: true });
+                setSignInError('');
+                form.reset();
             })
             .catch(error => {
-                console.log(error)
+                setSignInError(error.message);
             })
     }
 
@@ -78,6 +81,7 @@ const LogIn = () => {
                     <Button variant="primary" type="submit">Login</Button>
                     <p>Do not have an account <Link to={'/register'}>Register</Link></p>
                 </Form>
+                <p className='text-danger'>{signInError}</p>
                 <Footer></Footer>
             </Container>
 
