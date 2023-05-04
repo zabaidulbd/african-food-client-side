@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link } from "react-router-dom";
 import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Header = () => {
@@ -16,7 +15,7 @@ const Header = () => {
     return (
         <Navbar className='container my-5' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Radhuni-Food Blog</Navbar.Brand>
+                <Navbar.Brand href="#home">Radhuni-African Food Blogs and Recipe Website</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -26,7 +25,11 @@ const Header = () => {
                     <Nav>
                         {
                             user && <Nav.Link href="#deets">
-                                {<FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>}</Nav.Link>
+                                {
+                                    <Image style={{ height: '40px' }} src="https://img.freepik.com/free-photo/young-man-wearing-blue-outfit-holding-red-folder_1298-179.jpg?w=740&t=st=1683177286~exp=1683177886~hmac=c440209e285a379ced974449f84436bdcc297217e39170b08f534dfe769c131d" roundedCircle title="Zabaidul Islam"></Image>
+                                }
+
+                            </Nav.Link>
                         }
                         {
                             user ?
