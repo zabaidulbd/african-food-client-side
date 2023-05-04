@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useLoaderData } from "react-router-dom";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChefRecipe = () => {
 
     const [uniqueRecipe, setUniqueRecipe] = useState({});
+    const [isDisabled1, setIsDisabled1] = useState(false);
+    const [isDisabled2, setIsDisabled2] = useState(false);
+    const [isDisabled3, setIsDisabled3] = useState(false);
 
     const chefId = useParams();
     const singleChefId = chefId.id;
@@ -21,6 +26,19 @@ const ChefRecipe = () => {
         }
 
     }, [])
+
+    const handleToast1 = () => {
+        setIsDisabled1(true);
+        toast("add your recipe in favorite!");
+    }
+    const handleToast2 = () => {
+        setIsDisabled2(true);
+        toast("add your recipe in favorite!");
+    }
+    const handleToast3 = () => {
+        setIsDisabled3(true);
+        toast("add your recipe in favorite!");
+    }
 
 
     return (
@@ -53,7 +71,7 @@ const ChefRecipe = () => {
                                 <p className="card-text"><strong>Cooking Method : </strong>  {uniqueRecipe.method}</p>
                                 <p className="card-text"><strong>Ratings : </strong>{uniqueRecipe.rating}</p>
                             </div>
-                            <button className='btn btn-primary'>Favorite</button>
+                            <button onClick={handleToast1} disabled={isDisabled1} className='btn btn-primary'>Favorite</button>
                         </div>
                     </div>
                     <div className="col">
@@ -64,7 +82,7 @@ const ChefRecipe = () => {
                                 <p className="card-text"><strong>Cooking Method : </strong>  {uniqueRecipe.method}</p>
                                 <p className="card-text"><strong>Ratings : </strong>{uniqueRecipe.rating}</p>
                             </div>
-                            <button className='btn btn-primary'>Favorite</button>
+                            <button onClick={handleToast2} disabled={isDisabled2} className='btn btn-primary'>Favorite</button>
                         </div>
                     </div>
                     <div className="col">
@@ -75,7 +93,7 @@ const ChefRecipe = () => {
                                 <p className="card-text"><strong>Cooking Method : </strong>  {uniqueRecipe.method}</p>
                                 <p className="card-text"><strong>Ratings : </strong>{uniqueRecipe.rating}</p>
                             </div>
-                            <button className='btn btn-primary'>Favorite</button>
+                            <button onClick={handleToast3} disabled={isDisabled3} className='btn btn-primary'>Favorite</button>
                         </div>
                     </div>
                 </div>
