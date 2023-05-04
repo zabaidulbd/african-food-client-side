@@ -4,8 +4,11 @@ import { Carousel } from 'react-bootstrap';
 const TrendyFood = () => {
     return (
         <>
-            <h1 className='text-center my-5'>Trendy Recipes</h1>
-            <Carousel className='container'>
+            <div className='text-center container mt-5'>
+                <h1 className='fw-bold'>Trendy Recipes</h1>
+                <h6>African cuisine is incredibly diverse, and each country has its unique flavors and cooking traditions. In recent years, many trendy African recipes have gained popularity worldwide, showcasing the continent's rich culinary heritage.As more people become interested in exploring new cuisines and flavors, African cuisine is sure to continue to gain recognition for its delicious and diverse dishes.</h6>
+            </div>
+            <Carousel className='container mt-5'>
                 <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"

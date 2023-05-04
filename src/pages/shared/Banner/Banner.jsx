@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 
 const Banner = () => {
     return (
-        <div>
+        <>
             <Carousel className='container'>
                 <Carousel.Item interval={1000}>
                     <img
@@ -40,7 +40,7 @@ const Banner = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </div>
+        </>
     );
 };
 

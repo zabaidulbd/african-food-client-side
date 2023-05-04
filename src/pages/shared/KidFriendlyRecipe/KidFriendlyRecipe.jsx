@@ -3,9 +3,13 @@ import { Carousel } from 'react-bootstrap';
 
 const KidFriendlyRecipe = () => {
     return (
-        <div className='my-5'>
-            <h1 className='text-center my-5'>Kid-Friendly-Recipes</h1>
-            <Carousel className='container'>
+        <>
+            <div className='container text-center mt-5'>
+                <h1 className='fw-bold'>Kid-Friendly-Recipes</h1>
+                <h6>Introducing children to new and diverse cuisines can be a great way to expand their palates and help them appreciate different cultures. African cuisine has many kid-friendly recipes that are both delicious and nutritious.With a little bit of creativity, parents can introduce their children to the delicious and diverse world of African cuisine.</h6>
+            </div>
+
+            <Carousel className='container mt-5'>
                 <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
@@ -41,7 +45,7 @@ const KidFriendlyRecipe = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
-        </div>
+        </>
     );
 };
 

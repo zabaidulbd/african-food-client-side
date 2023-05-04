@@ -15,7 +15,8 @@ const SingleChefDetails = ({ single }) => {
                         <h6>Number of Recipe: {number}</h6>
                     </div>
                 </div>
-                <Link to={`/chef/${id}`}><button className='btn btn-primary'>View Recipes</button></Link>
+                <Link className='ms-2 mb-4 text-center' to={`/chef/${id}`}><button className='btn btn-info'>View Recipes</button>
+                </Link>
             </div>
         </div>
     );

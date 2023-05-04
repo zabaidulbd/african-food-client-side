@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { AuthContext } from '../../../providers/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
 import ActiveLink from '../../../ActiveLink/ActiveLink';
 
 const Header = () => {
