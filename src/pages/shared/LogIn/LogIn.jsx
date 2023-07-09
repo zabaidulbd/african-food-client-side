@@ -70,7 +70,7 @@ const LogIn = () => {
                 </div>
                 <div className='w-50 mt-5 ms-5'>
                     <Form className='w-75' onSubmit={handleLogin}>
-                        <h3 className='mb-3'>Please Login</h3>
+                        <h1 className='mb-3'>Please Login</h1>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name='email' placeholder="Enter email" required />
@@ -80,8 +80,10 @@ const LogIn = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name='password' placeholder="Password" required />
                         </Form.Group>
-                        <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info"><FaGoogle></FaGoogle> Login with Google </Button></span> <span><Button onClick={handleGitHubSignIn} variant="info"><FaGithub></FaGithub>Login with GitHub</Button></span></div>
-                        <Button variant="primary" type="submit">Login</Button>
+                        <Button className='mb-1' variant="secondary" size="lg" type="submit">Login</Button>
+                        <div className='border border-secondary my-2'></div>
+                        <div className='mb-2 ms-3'>OR</div>
+                        <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="outline-secondary" className='me-2 text-black'><FaGoogle className='me-2'></FaGoogle>Google Login </Button></span> <span><Button onClick={handleGitHubSignIn} variant="outline-secondary" className='text-black'><FaGithub className='me-2'></FaGithub>GitHub Login</Button></span></div>
                         <p>Do not have an account <Link to={'/register'}>Register</Link></p>
                     </Form>
                     <p className='text-danger'>{signInError}</p>

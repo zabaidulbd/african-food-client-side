@@ -7,11 +7,11 @@ const Footer = () => {
     return (
         <div className='mt-5 container'>
             <Card bg="light" variant="light">
-                <div className='d-flex justify-content-between'>
-                    <div className='mt-5 ms-5'>
+                <div className='d-flex justify-content-around'>
+                    <div className='mt-5'>
                         <div className='d-flex'>
                             <div>
-                                <img className='rounded-5' style={{ width: '100px', height: '100px' }} src={logoFooter} alt="" />
+                                <img className='rounded-5' style={{ width: '110px', height: '110px' }} src={logoFooter} alt="" />
                             </div>
                             <div className='mt-4 ms-3'>
                                 <h5>African food Blog</h5>
@@ -30,8 +30,8 @@ const Footer = () => {
                         </Card.Body>
                     </div>
                     <div className='mt-5 text-black me-5'>
-                        <h4 className='mb-2'>Connect</h4>
-                        <p> <span><FaFacebook /></span> <span className='mx-2'><FaTwitter></FaTwitter></span> <span><FaLinkedinIn></FaLinkedinIn></span> <span><FaYoutube className='ms-2'></FaYoutube></span> </p>
+                        <h4 className='mb-3'>Connect</h4>
+                        <p> <span><FaFacebook className='fs-5' /></span> <span className='mx-2'><FaTwitter className='fs-5'></FaTwitter></span> <span><FaLinkedinIn className='fs-5'></FaLinkedinIn></span> <span><FaYoutube className='ms-2 fs-4'></FaYoutube></span> </p>
                     </div>
                 </div>
             </Card>
