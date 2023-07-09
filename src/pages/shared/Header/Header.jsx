@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { AuthContext } from '../../../providers/AuthProvider';
 import ActiveLink from '../../../ActiveLink/ActiveLink';
+import logo from '../../../assets/Navbar/logo.png'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -12,14 +13,15 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='container my-5 p-4' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='container mb-5 p-4' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home">Radhuni-African Food Blogs and Recipe Website</Navbar.Brand>
+                <img className='me-5 ms-3 rounded-5' style={{ width: '100px', height: '100px' }} src={logo} alt="" />
+                <Navbar.Brand href="#home" className='fs-2 fw-bold'>African Food Blog</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <span className='me-2'><ActiveLink to={'/'}>Home</ActiveLink></span>
-                        <span><ActiveLink to={'/blog'}>Blog</ActiveLink></span>
+                        <span className='ms-4 me-2'><ActiveLink to={'/'}> <span className='fw-semibold text-black fs-5'>Home</span></ActiveLink></span>
+                        <span className='mx-2 text-black fw-semibold'><ActiveLink to={'/blog'}><span className='fw-semibold text-black fs-5'>Blog</span></ActiveLink></span>
                     </Nav>
                     <Nav>
                         {
@@ -32,8 +34,8 @@ const Header = () => {
                         }
                         {
                             user ?
-                                <Button onClick={handleLogOut} variant="secondary">Log-Out</Button> :
-                                <ActiveLink to={'/login'}>Login</ActiveLink>
+                                <Button className='fw-semibold text-black fs-5' onClick={handleLogOut} variant="secondary">Log-Out</Button> :
+                                <ActiveLink to={'/login'}> <span className='fw-semibold text-black fs-5'>Login</span></ActiveLink>
                         }
                     </Nav>
                 </Navbar.Collapse>
