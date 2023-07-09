@@ -8,6 +8,7 @@ import { useLocation } from 'react-router';
 import { GithubAuthProvider, GoogleAuthProvider, confirmPasswordReset, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase/firebase.config';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
+import contactImg from '../../../assets/contact/contact.jpg'
 
 const LogIn = () => {
     const [signInError, setSignInError] = useState();
@@ -63,27 +64,30 @@ const LogIn = () => {
     return (
         <>
             <Header></Header>
-            <Container>
-                <h3>Please Login</h3>
-                <Form onSubmit={handleLogin}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" name='email' placeholder="Enter email" required />
-                    </Form.Group>
+            <div className='d-flex'>
+                <div className='w-50 ms-5'>
+                    <img className='w-75' src={contactImg} alt="" />
+                </div>
+                <div className='w-50 mt-5 ms-5'>
+                    <Form className='w-75' onSubmit={handleLogin}>
+                        <h3 className='mb-3'>Please Login</h3>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" name='email' placeholder="Enter email" required />
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name='password' placeholder="Password" required />
-                    </Form.Group>
-                    <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info"><FaGoogle></FaGoogle> Login with Google </Button></span> <span><Button onClick={handleGitHubSignIn} variant="info"><FaGithub></FaGithub>Login with GitHub</Button></span></div>
-                    <Button variant="primary" type="submit">Login</Button>
-                    <p>Do not have an account <Link to={'/register'}>Register</Link></p>
-                </Form>
-                <p className='text-danger'>{signInError}</p>
-                <Footer></Footer>
-            </Container>
-
-
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" name='password' placeholder="Password" required />
+                        </Form.Group>
+                        <div className='mb-2'><span><Button onClick={handleGoogleSignIn} variant="info"><FaGoogle></FaGoogle> Login with Google </Button></span> <span><Button onClick={handleGitHubSignIn} variant="info"><FaGithub></FaGithub>Login with GitHub</Button></span></div>
+                        <Button variant="primary" type="submit">Login</Button>
+                        <p>Do not have an account <Link to={'/register'}>Register</Link></p>
+                    </Form>
+                    <p className='text-danger'>{signInError}</p>
+                </div>
+            </div>
+            <Footer></Footer>
         </>
     );
 };
