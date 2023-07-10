@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import { Button, Container, Form } from 'react-bootstrap';
 import Footer from '../Footer/Footer';
@@ -6,6 +6,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router';
 import { AuthContext } from '../../../providers/AuthProvider';
 import registrationImg from '../../../assets/registration/registration.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Register = () => {
     const [registerError, setRegisterError] = useState('');
@@ -33,14 +35,21 @@ const Register = () => {
                 setRegisterError(error.message);
             })
     }
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+        AOS.refresh(); // Refresh AOS when the component mounts or updates
+    }, []);
     return (
         <>
             <Header></Header>
             <div className='d-flex'>
-                <div className='w-50 ms-5'>
+                <div data-aos="fade-up" className='w-50 ms-5'>
                     <img className='w-75' src={registrationImg} alt="" />
                 </div>
-                <div className='w-50 mt-5 ms-5'>
+                <div data-aos="fade-down" className='w-50 mt-5 ms-5'>
                     <Form className='w-75' onSubmit={handleRegister}>
                         <h1 className='mb-3'>Please Register</h1>
                         <Form.Group className="mb-3" controlId="formBasicEmail">

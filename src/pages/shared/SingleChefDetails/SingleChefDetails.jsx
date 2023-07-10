@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const SingleChefDetails = ({ single }) => {
     const { id, image, name, experience, number, likes, } = single;
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+        AOS.refresh(); // Refresh AOS when the component mounts or updates
+    }, []);
 
     return (
-        <div className="col">
+        <div data-aos="fade-up" className="col">
             <div className="card h-100">
                 <img src={image} className="card-img-top" alt="" />
                 <div className="card-body">

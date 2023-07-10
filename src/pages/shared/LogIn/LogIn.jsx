@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { Button, Container, Form } from 'react-bootstrap';
@@ -9,6 +9,8 @@ import { GithubAuthProvider, GoogleAuthProvider, confirmPasswordReset, getAuth, 
 import app from '../../../firebase/firebase.config';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import contactImg from '../../../assets/contact/contact.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const LogIn = () => {
     const [signInError, setSignInError] = useState();
@@ -60,15 +62,22 @@ const LogIn = () => {
                 console.log(error)
             })
     }
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+        AOS.refresh(); // Refresh AOS when the component mounts or updates
+    }, []);
 
     return (
         <>
             <Header></Header>
             <div className='d-flex'>
-                <div className='w-50 ms-5'>
+                <div data-aos="fade-up" className='w-50 ms-5'>
                     <img className='w-75' src={contactImg} alt="" />
                 </div>
-                <div className='w-50 mt-5 ms-5'>
+                <div data-aos="fade-down" className='w-50 mt-5 ms-5'>
                     <Form className='w-75' onSubmit={handleLogin}>
                         <h1 className='mb-3'>Please Login</h1>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
