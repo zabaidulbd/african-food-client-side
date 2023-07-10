@@ -13,34 +13,34 @@ const KidFriendlyRecipe = () => {
                 <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://img.freepik.com/free-photo/medium-shot-girl-holding-glass-with-juice_23-2148910359.jpg?w=996&t=st=1683005137~exp=1683005737~hmac=e9acd7ebb84c7e904f5f0b690414457acba96e5923a9d27ae3553092cc19533a"
+                        src="https://img.freepik.com/free-photo/cute-black-baby-home_23-2149504646.jpg?w=900&t=st=1689003143~exp=1689003743~hmac=6a3aacbc453f218490961c3c6fce917559a5fa96e75cc1283696e3be73f05e9b"
                         alt="First slide"
                     />
-                    <Carousel.Caption>
-                        <h3>Harissa (North African Chili Paste)</h3>
-                        <p>This one is extra special… Beef Tagine is an alluring labor of love that takes hours to slowly cook and simmer. It’s not your regular stew by any standard.</p>
+                    <Carousel.Caption className='text-black'>
+                        <h1>Harissa-North African</h1>
+                        <h6>This one is extra special. For Your Child</h6>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={500}>
                     <img
                         className="d-block w-100"
-                        src="https://img.freepik.com/premium-photo/curly-haired-girl-enjoyed-variety-dishes-table_38076-2430.jpg?w=996"
+                        src="https://img.freepik.com/free-photo/young-kids-cooking-together_23-2149432917.jpg?w=900&t=st=1689003147~exp=1689003747~hmac=91adec2d55a8c213333218a38f099174a3d3dba0f2ebe1ae8b205f04bd680f13"
                         alt="Second slide"
                     />
-                    <Carousel.Caption>
-                        <h3>Shakshuka</h3>
-                        <p>This West African peanut stew, Maafe (or Mafe), is loaded with rich savory flavors. Any meat of your choice goes great in this perfectly spiced peanut butter and tomato based sauce.</p>
+                    <Carousel.Caption className='text-black'>
+                        <h1>Shakshuka-East African</h1>
+                        <p>This is another best choice for child</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://img.freepik.com/free-photo/cute-black-baby-home_23-2149504646.jpg?w=996&t=st=1683005200~exp=1683005800~hmac=156971c1e1d0e73c3c9bf45e5d1f0776aa25eee10832206f0cb96637bf560f5c"
+                        src="https://img.freepik.com/free-photo/young-kids-cooking-together_23-2149432912.jpg?w=900&t=st=1689003156~exp=1689003756~hmac=2085eae338ad64df3c20baf6fb03d2f38b8f4c048b38aac109d83086fcf3bca3"
                         alt="Third slide"
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className='text-black'>
                         <h3>North African Chermoula</h3>
-                        <p>The Ivory Coast is one spicy country, proud of its chili tolerance! This kedjenou chicken stew is cooked “undisturbed” low and slow in its own juices along with plenty of vegetables, some hot peppers, the goodness of thyme and the smokiness of paprika.
+                        <p>Another vegetarian for Your Child
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>

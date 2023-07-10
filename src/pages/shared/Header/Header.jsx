@@ -34,8 +34,8 @@ const Header = () => {
                         }
                         {
                             user ?
-                                <Button className='fw-semibold text-black fs-5' onClick={handleLogOut} variant="secondary">Log-Out</Button> :
-                                <ActiveLink to={'/login'}> <span className='fw-semibold text-black fs-5'>Login</span></ActiveLink>
+                                <button className='ms-2 rounded-4' onClick={handleLogOut} variant="secondary">Log-Out</button> :
+                                <ActiveLink to={'/login'}> <span className='fw-semibold text-black fs-4'>Login</span></ActiveLink>
                         }
                     </Nav>
                 </Navbar.Collapse>

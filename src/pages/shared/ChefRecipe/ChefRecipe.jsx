@@ -49,10 +49,10 @@ const ChefRecipe = () => {
                         <div className="col-md-6 p-5">
                             <div className="card-body">
                                 <h2 className="card-title text-center">{uniqueRecipe.name}</h2>
-                                <h5 className="card-text my-5">{uniqueRecipe.description}</h5>
-                                <h6 className="card-text">Total Number of Recipes : {uniqueRecipe.number}</h6>
-                                <h6 className="card-text">Experience :{uniqueRecipe.experience}</h6>
-                                <h6 className="card-text">Likes : {uniqueRecipe.likes}</h6>
+                                <h6 className="card-text my-5">{uniqueRecipe.description}</h6>
+                                <h6 className="card-text fw-bold">Total Number of Recipes : {uniqueRecipe.number}</h6>
+                                <h6 className="card-text fw-bold">Experience :{uniqueRecipe.experience}</h6>
+                                <h6 className="card-text fw-bold">Likes : {uniqueRecipe.likes}</h6>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ const ChefRecipe = () => {
                                 <p className="card-text"><strong>Cooking Method : </strong>  {uniqueRecipe.method}</p>
                                 <p className="card-text"><strong>Ratings : </strong>{uniqueRecipe.rating}</p>
                             </div>
-                            <button onClick={handleToast1} disabled={isDisabled1} className='btn btn-primary'>Favorite</button>
+                            <button onClick={handleToast1} disabled={isDisabled1} className='btn btn-secondary'>Favorite</button>
                         </div>
                     </div>
                     <div className="col">
@@ -78,7 +78,7 @@ const ChefRecipe = () => {
                                 <p className="card-text"><strong>Cooking Method : </strong>  {uniqueRecipe.method}</p>
                                 <p className="card-text"><strong>Ratings : </strong>{uniqueRecipe.rating}</p>
                             </div>
-                            <button onClick={handleToast2} disabled={isDisabled2} className='btn btn-primary'>Favorite</button>
+                            <button onClick={handleToast2} disabled={isDisabled2} className='btn btn-secondary'>Favorite</button>
                         </div>
                     </div>
                     <div className="col">
@@ -89,7 +89,7 @@ const ChefRecipe = () => {
                                 <p className="card-text"><strong>Cooking Method : </strong>  {uniqueRecipe.method}</p>
                                 <p className="card-text"><strong>Ratings : </strong>{uniqueRecipe.rating}</p>
                             </div>
-                            <button onClick={handleToast3} disabled={isDisabled3} className='btn btn-primary'>Favorite</button>
+                            <button onClick={handleToast3} disabled={isDisabled3} className='btn btn-secondary'>Favorite</button>
                         </div>
                     </div>
                 </div>
