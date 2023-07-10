@@ -9,14 +9,17 @@ const SingleChefDetails = ({ single }) => {
             <div className="card h-100">
                 <img src={image} className="card-img-top" alt="" />
                 <div className="card-body">
-                    <h5 className="card-title d-flex justify-content-between">{name}<span>Likes:{likes}</span></h5>
-                    <div className="card-text text-center">
-                        <h6>Years of Experience: {experience}</h6>
-                        <h6>Number of Recipe: {number}</h6>
+                    <h5 className="card-title d-flex justify-content-between">Name: {name}<span>Likes:{likes}</span></h5>
+                    <div className="card-text">
+                        <h6>Experience: {experience}</h6>
+                        <h6>Total Recipe: {number}</h6>
                     </div>
                 </div>
-                <Link className='ms-2 mb-4 text-center' to={`/chef/${id}`}><button className='btn btn-secondary'>View Recipes</button>
-                </Link>
+                <div className='card-footer text-center fs-5'>
+                    <Link className='text-black text-decoration-none fw-semibold' to={`/chef/${id}`}>View Recipes
+                    </Link>
+                </div>
+
             </div>
         </div>
     );
